@@ -1,0 +1,16 @@
+# ---- core data & docx handling ----
+python-docx          # provides Document / CT_Tbl / OxmlElement / qn
+openpyxl             # Excel writing & image embedding
+
+# ---- images & hashing ----
+Pillow               # PIL.Image
+imagehash            # perceptual hashing of images
+html2image           # converts HTML / matplotlib figs to PNGs
+
+# ---- data analysis & plotting ----
+pandas
+numpy
+matplotlib
+
+# ---- web UI ----
+streamlit            # front-end

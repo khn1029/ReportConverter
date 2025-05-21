@@ -66,14 +66,14 @@ if st.session_state.get("run_complete"):
     if isinstance(data, pd.DataFrame):
         show_dataframe_as_table(data)
     else:
-        try:
+        # try:
             image = Image.open(io.BytesIO(data)).copy()
             image = image.convert("RGBA")
             st.write(f"Format = {image.format}, Size = {image.size}, Mode = {image.mode}")
             st.image(image, caption=selected_obj.get("title", "Image"), use_column_width=True)
-        except:
-
-            st.warning("No data to display or unsupported format.")
+        # except:
+        #
+        #     st.warning("No data to display or unsupported format.")
 
 # Initialize the state
 if "create_excel_clicked" not in st.session_state:

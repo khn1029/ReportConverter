@@ -323,7 +323,7 @@ def get_object_captions(object_index, toc_df):
         toc_df_added=pd.concat([toc_df_added,new_row])
         # update toc_df_filtered to prevent duplication
         toc_df_filtered=toc_df_filtered[toc_df_filtered['label']!=new_row['label'].values[0]]
-    combined=pd.concat([object_index,toc_df_added],axis=1)
+    combined=pd.concat([object_index.reset_index(drop=True),toc_df_added.reset_index(drop=True)],axis=1)
 
     return combined.sort_index()
 

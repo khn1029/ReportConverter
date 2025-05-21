@@ -68,8 +68,11 @@ if st.session_state.get("run_complete"):
     else:
         try:
             image = Image.open(io.BytesIO(data)).copy()
+            image = image.convert("RGBA")
+            st.write(f"Format = {image.format}, Size = {image.size}, Mode = {image.mode}")
             st.image(image, caption=selected_obj.get("title", "Image"), use_column_width=True)
         except:
+
             st.warning("No data to display or unsupported format.")
 
 # Initialize the state
